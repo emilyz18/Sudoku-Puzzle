@@ -39,15 +39,23 @@ hr {
 }
 
 .tile-start{
-    background-color: whitesmoke;
+    background-color:rgba(207, 207, 207, 0.463);
 }
 
-.horizontal-line {
+.top-line {
+    border-top: 1.5px solid black;
+}
+
+.bottom-line {
     border-bottom: 1.5px solid black;
 }
 
-.vertical-line {
+.right-line {
     border-right: 1.5px solid black;
+}
+
+.left-line {
+    border-left: 1.5px solid black;
 }
 
 
