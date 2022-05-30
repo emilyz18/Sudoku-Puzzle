@@ -1,0 +1,55 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: 28px;
+    
+
+}
+
+hr {
+    width: 500px;
+}
+
+#error {
+    color: red;
+    font-size: 15px;
+}
+
+#board {
+    width: 450px;
+    height: 450px;
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.tile{
+    width: 48px;
+    height: 48px;
+    border: 1px solid lightgray;
+
+    font-size: 20px;
+    font-weight: bold;
+    justify-content:center;
+    align-items: center;
+    box-sizing: border-box;
+    text-align: end;
+}
+
+.tile-start{
+    background-color: whitesmoke;
+}
+
+.horizontal-line {
+    border-bottom: 1.5px solid black;
+}
+
+.vertical-line {
+    border-right: 1.5px solid black;
+}
+
+
+
+
