@@ -1,7 +1,7 @@
 var B = null;
 
 // empty
-var board0 = [
+var board = [
     [B,B,B,B,B,B,B,B,B],
     [B,B,B,B,B,B,B,B,B],
     [B,B,B,B,B,B,B,B,B],
@@ -64,6 +64,8 @@ window.onload = function() {
 }
 
 function setGame() {
+    const random = Math.floor(Math.random()*allBoards.length)
+    board = allBoards[random]
     // Board 9x9
     for (let r = 0; r < 9; r++) {
         for (let c = 0; c < 9; c++) {
@@ -77,17 +79,38 @@ function setGame() {
             tile.max = "9"
             tile.classList.add("tile");
             
-            if (r == 2 || r == 5) {
-            tile.classList.add("horizontal-line")
+            if (r == 2 || r == 5 || r == 8) {
+            tile.classList.add("bottom-line")
             }
 
-            if ( c == 2 || c == 5) {
-                tile.classList.add("vertical-line")
+            if ( c == 2 || c == 5 || c == 8) {
+                tile.classList.add("right-line")
             }
+
+            if (r == 0) {
+                tile.classList.add("top-line")
+            }
+
+            if (c == 0) {
+                tile.classList.add("left-line")
+            }
+
+            if (board[r][c] != null) {
+                tile.readOnly = true
+                tile.classList.add("tile-start")
+            
+
+                
+            }
+
 
             document.getElementById("board").append(tile);
+
+            document.getElementById(r.toString()+ "-"+ c.toString()).value = board[r][c]
+
         }
     }
+
 
     let resetButton = document.getElementById("reset")
     resetButton.addEventListener("click", function(){
@@ -100,31 +123,12 @@ function setGame() {
     })
 
     let solveButton = document.getElementById("solve")
-
     solveButton.addEventListener("click", function(){
-        var B = null
-        var board = [
-            [B,B,B,B,B,B,B,B,B],
-            [B,B,B,B,B,B,B,B,B],
-            [B,B,B,B,B,B,B,B,B],
-            [B,B,B,B,B,B,B,B,B],
-            [B,B,B,B,B,B,B,B,B],
-            [B,B,B,B,B,B,B,B,B],
-            [B,B,B,B,B,B,B,B,B],
-            [B,B,B,B,B,B,B,B,B],
-            [B,B,B,B,B,B,B,B,B],
-            document.getElementById("error").innerText = ""
+        document.getElementById("error").innerText = ""
 
-        
-        ]
         for (let r = 0; r<9; r++) {
             for (let c =0; c<9; c++){
                 const singleSlot = document.getElementById(r.toString()+ "-"+ c.toString()).value
-                const random = Math.floor(Math.random()*allBoards.length)
-
-                document.getElementById(r.toString()+ "-"+ c.toString()).value = null
-
-
 
             if (singleSlot == ""){
                     board[r][c] = null
@@ -163,9 +167,11 @@ function setGame() {
         }
 
         }
-        //solve(allBoards[random])
-        solve(board)
-    
+        
+        // must have it here for it to solve random for every solve click
+        //const random = Math.floor(Math.random()*allBoards.length)
+
+        solve(board)    
     })
 }
 
