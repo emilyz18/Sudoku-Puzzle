@@ -2,7 +2,7 @@ body {
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
     font-size: 28px;
-    
+
 
 }
 
@@ -25,21 +25,21 @@ hr {
 
 }
 
-.tile{
+.tile {
     width: 48px;
     height: 48px;
     border: 1px solid lightgray;
 
     font-size: 20px;
     font-weight: bold;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     box-sizing: border-box;
     text-align: end;
 }
 
-.tile-start{
-    background-color:rgba(207, 207, 207, 0.463);
+.tile-start {
+    background-color: rgba(207, 207, 207, 0.463);
 }
 
 .top-line {
@@ -57,7 +57,3 @@ hr {
 .left-line {
     border-left: 1.5px solid black;
 }
-
-
-
-
