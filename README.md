@@ -1,3 +1,3 @@
 # Sudoku Puzzle
 
-https://jyy18.github.io/Sudoku-Puzzle/
+https://emilyz18.github.io/Sudoku-Puzzle/
