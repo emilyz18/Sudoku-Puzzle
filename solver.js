@@ -338,7 +338,7 @@ function setGame() {
 
                 } else {
                     document.getElementById("error").innerText = "invalid input"
-                    board[r][c] = 11
+                    board[r][c] = -1
                 }
 
             }
@@ -390,7 +390,7 @@ function isSolved(localBoard) {
     for (var i = 0; i < 9; i++) {
         for (var a = 0; a < 9; a++) {
 
-            if (localBoard[i][a] == null || localBoard[i][a] == 11) {
+            if (localBoard[i][a] == null || localBoard[i][a] == -1) {
                 return false
             }
         }
